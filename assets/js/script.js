@@ -1,4 +1,6 @@
 (function($){
+	'use strict';
+	
 	$(document).ready(function(){
 		$('.bxslider').each(function(i,slider){
 			var mode = $(slider).attr('data-mode');
