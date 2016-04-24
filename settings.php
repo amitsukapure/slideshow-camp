@@ -54,7 +54,7 @@
 		<h2><?php echo __('Sildeshow Camp','slideshow-camp') ?></h2>
 		<div class="slideshow-listing">
 			<?php if(empty($slideshows)) : ?>
-				<?php echo __('No slideshow found', 'slideshow-camp'); ?>
+				<p><?php echo __('No slideshow found', 'slideshow-camp'); ?></p>
 			<?php else : ?>
 				<table class="wp-list-table widefat fixed striped pages">
 				<thead>
@@ -144,9 +144,9 @@
 					</td>
 					<td>
 						<select name="slideshow[mode]">
-							<option value="horizontal"><?php echo __('Horizontal', 'slideshow-camp'); ?></option>
-							<option value="vertical"><?php echo __('Vertical', 'slideshow-camp'); ?></option>
-							<option value="fade"><?php echo __('Fade', 'slideshow-camp'); ?></option>
+							<option value="horizontal" <?php ($slideshow['mode'] == 'horizontal') ? 'selected' : ''; ?>><?php echo __('Horizontal', 'slideshow-camp'); ?></option>
+							<option value="vertical" <?php ($slideshow['mode'] == 'vertical') ? 'selected' : ''; ?>><?php echo __('Vertical', 'slideshow-camp'); ?></option>
+							<option value="fade" <?php ($slideshow['mode'] == 'fade') ? 'selected' : ''; ?>><?php echo __('Fade', 'slideshow-camp'); ?></option>
 						</select>
 					</td>
 				</tr>
