@@ -2,8 +2,37 @@
     width: 15%;
     display: inline-block;
     margin-right: 15px;
-    vertical-align: top
+    margin-bottom: 15px;
+    vertical-align: top;
+    position: relative;
 }
 .image-wrapper img {
 	max-width: 100%;
+	cursor: move;
+}
+.form-table td {
+	vertical-align: top !important
+}
+html .form-field input[type=text] {
+	width: 30%
+}
+
+.delete-slideshow-image {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    color: red;
+    text-shadow: 0 0 0px white;
+    cursor: pointer;
+    display: none;
+    background: white;
+}
+.image-wrapper:hover .delete-slideshow-image {
+	display: block
+}
+span.help {
+    font-size: 76%;
+    line-height: normal;
+    font-style: italic;
 }

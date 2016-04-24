@@ -1,16 +1,31 @@
 (function( $ ) {
     'use strict';
 
+    $(document).on('click', '.delete-slideshow-image', function(){
+        $(this).parent().remove();
+        $('#slideshow-images').trigger('change');
+    });
+
+    $('#slideshow-title').on('keyup', function(){
+        var title = $(this).val();
+        var slug = title.trim().replace(/[^a-z0-9]+/gi, '-').toLowerCase();
+        $('#slideshow-slug').val(slug);
+    });
+
+    $('#slideshow-images').on('change', function(){
+        var img_array = [];
+        $('.slideshow-images').find('.image-wrapper').each(function(i, image){
+            var id = $(this).attr('data-id');
+            img_array.push(id);
+        });
+        var images = img_array.join(',');
+        $('#slideshow-images').val(images);
+    });
+
     $( ".slideshow-images" ).sortable({
         containment: "parent",
         update: function(event, ui) {
-            var img_array = [];
-            $('.slideshow-images').find('.image-wrapper').each(function(i, image){
-                var id = $(this).attr('data-id');
-                img_array.push(id);
-            });
-            var images = img_array.join(',');
-            $('#slideshow-images').val(images);
+            $('#slideshow-images').trigger('change');
         }
     });
 
@@ -61,6 +76,7 @@
 
             var html = '<div class="image-wrapper" data-id="'+json.id+'"> \
                 <img src="'+json.url+'" alt="image"/>\
+                <span class="dashicons dashicons-no-alt delete-slideshow-image"></span>\
             </div>';
 
             var images = $('#slideshow-images').val();
@@ -77,6 +93,8 @@
             $('#slideshow-images').val(images);
 
             $('.slideshow-images').append(html);
+
+            $('#add-slideshow-images').val('Insert more image');
 
         });
      
