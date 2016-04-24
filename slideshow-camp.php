@@ -72,7 +72,16 @@ if(!class_exists('slideshowCamp')) {
 			if(empty($images_array)) :	?>
 				<div>No slider found!</div>
 			<?php else : ?>
-				<ul class="bxslider" data-mode="fade" data-captions="true">
+				<?php
+					$animation = (isset($slideshow['mode'])) ? $slideshow['mode'] : 'horizontal';
+					$speed = (isset($slideshow['speed'])) ? $slideshow['speed'] : '500';
+					$infiniteLoop = (isset($slideshow['infiniteLoop']) && $slideshow['infiniteLoop'] == 'on') ? true : false;
+					$adaptiveHeight = (isset($slideshow['adaptiveHeight']) && $slideshow['adaptiveHeight'] == 'on') ? true : false;
+					$auto = (isset($slideshow['auto']) && $slideshow['auto'] == 'on') ? true : false;
+					$controls = (isset($slideshow['controls']) && $slideshow['controls'] == 'on') ? true : false;
+					$pager = (isset($slideshow['pager']) && $slideshow['pager'] == 'on') ? true : false;
+				?>
+				<ul class="bxslider" data-mode="<?php echo $animation ?>" data-speed="<?php echo $speed ?>" data-infiniteLoop="<?php echo $infiniteLoop; ?>" data-adaptiveHeight="<?php echo $adaptiveHeight ?>" data-auto="<?php echo $auto ?>" data-controls="<?php echo $controls ?>" data-pager="<?php echo $pager ?>">
 					<?php foreach ($images_array as $key => $image) : ?>
 						<li><img src="<?php echo wp_get_attachment_url($image); ?>" title="Happy trees" /></li>
 					<?php endforeach; ?>				

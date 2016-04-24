@@ -98,6 +98,38 @@
 					<input type="button" id="add-slideshow-images" class="button" value="<?php echo __('Add Image', 'slideshow-camp') ?>" />
 				</div>
 				<div class="form-field">
+					<label for="mode"><?php echo __('Animation of slide', 'slideshow-camp'); ?></label>
+					<select name="slideshow[mode]">
+						<option value="horizontal"><?php echo __('Horizontal', 'slideshow-camp'); ?></option>
+						<option value="vertical"><?php echo __('Vertical', 'slideshow-camp'); ?></option>
+						<option value="fade"><?php echo __('Fade', 'slideshow-camp'); ?></option>
+					</select>
+				</div>
+				<div class="form-field">
+					<label for="speed"><?php echo __('Transition Speed', 'slideshow-camp'); ?></label>
+					<input type="text" value="<?php echo $slideshow['speed'] ?>" name="slideshow[speed]" />
+				</div>
+				<div class="form-field">
+					<label for="infiniteLoop"><?php echo __('Infinite Loop', 'slideshow-camp'); ?></label>
+					<input type="checkbox" <?php echo ($slideshow['infiniteLoop'] == 'on') ? 'checked' : ''; ?> name="slideshow[infiniteLoop]" />
+				</div>
+				<div class="form-field">
+					<label for="adaptiveHeight"><?php echo __('Adaptive Height', 'slideshow-camp'); ?></label>
+					<input type="checkbox" <?php echo ($slideshow['adaptiveHeight'] == 'on') ? 'checked' : ''; ?> name="slideshow[adaptiveHeight]" />
+				</div>
+				<div class="form-field">
+					<label for="auto"><?php echo __('Auto Start', 'slideshow-camp'); ?></label>
+					<input type="checkbox" <?php echo ($slideshow['auto'] == 'on') ? 'checked' : ''; ?> name="slideshow[auto]" />
+				</div>
+				<div class="form-field">
+					<label for="controls"><?php echo __('Enable Controls?', 'slideshow-camp'); ?></label>
+					<input type="checkbox" <?php echo ($slideshow['controls'] == 'on') ? 'checked' : ''; ?> name="slideshow[controls]" />
+				</div>
+				<div class="form-field">
+					<label for="pager"><?php echo __('Enable Pager?', 'slideshow-camp'); ?></label>
+					<input type="checkbox" <?php echo ($slideshow['pager'] == 'on') ? 'checked' : ''; ?> name="slideshow[pager]" />
+				</div>
+				<div class="form-field">
 					<input type="submit" name="submit-slideshow" value="<?php echo __('Update slideshow', 'slideshow-camp'); ?>" class="button-primary">
 				</div>
 			</form>
@@ -122,6 +154,38 @@
 
 					</div>
 					<input type="button" id="add-slideshow-images" class="button" value="<?php echo __('Add Images', 'slideshow-camp') ?>" />
+				</div>
+				<div class="form-field">
+					<label for="mode"><?php echo __('Animation of slide', 'slideshow-camp'); ?></label>
+					<select name="slideshow[mode]">
+						<option value="horizontal"><?php echo __('Horizontal', 'slideshow-camp'); ?></option>
+						<option value="vertical"><?php echo __('Vertical', 'slideshow-camp'); ?></option>
+						<option value="fade"><?php echo __('Fade', 'slideshow-camp'); ?></option>
+					</select>
+				</div>
+				<div class="form-field">
+					<label for="speed"><?php echo __('Transition Speed', 'slideshow-camp'); ?></label>
+					<input type="text" name="slideshow[speed]" />
+				</div>
+				<div class="form-field">
+					<label for="infiniteLoop"><?php echo __('Infinite Loop', 'slideshow-camp'); ?></label>
+					<input type="checkbox" checked name="slideshow[infiniteLoop]" />
+				</div>
+				<div class="form-field">
+					<label for="adaptiveHeight"><?php echo __('Adaptive Height', 'slideshow-camp'); ?></label>
+					<input type="checkbox" name="slideshow[adaptiveHeight]" />
+				</div>
+				<div class="form-field">
+					<label for="auto"><?php echo __('Auto Start', 'slideshow-camp'); ?></label>
+					<input type="checkbox" checked name="slideshow[auto]" />
+				</div>
+				<div class="form-field">
+					<label for="controls"><?php echo __('Enable Controls?', 'slideshow-camp'); ?></label>
+					<input type="checkbox" checked name="slideshow[controls]" />
+				</div>
+				<div class="form-field">
+					<label for="pager"><?php echo __('Enable Pager?', 'slideshow-camp'); ?></label>
+					<input type="checkbox" checked name="slideshow[pager]" />
 				</div>
 				<div class="form-field">
 					<input type="submit" name="submit-slideshow" value="<?php echo __('Create new slideshow', 'slideshow-camp'); ?>" class="button-primary">
