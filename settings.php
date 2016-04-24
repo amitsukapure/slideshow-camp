@@ -255,7 +255,7 @@
 						<label for="speed"><?php echo __('Transition Speed', 'slideshow-camp'); ?></label>
 					</td>
 					<td>
-						<input type="text" name="slideshow[speed]" />
+						<input type="text" value="500" name="slideshow[speed]" />
 					</td>
 				</tr>
 				<tr class="form-field">

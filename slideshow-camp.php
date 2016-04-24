@@ -74,7 +74,7 @@ if(!class_exists('slideshowCamp')) {
 			<?php else : ?>
 				<?php
 					$animation = (isset($slideshow['mode'])) ? $slideshow['mode'] : 'horizontal';
-					$speed = (isset($slideshow['speed'])) ? $slideshow['speed'] : '500';
+					$speed = (isset($slideshow['speed'])) ? $slideshow['speed'] : 500;
 					$infiniteLoop = (isset($slideshow['infiniteLoop']) && $slideshow['infiniteLoop'] == 'on') ? true : false;
 					$adaptiveHeight = (isset($slideshow['adaptiveHeight']) && $slideshow['adaptiveHeight'] == 'on') ? true : false;
 					$auto = (isset($slideshow['auto']) && $slideshow['auto'] == 'on') ? true : false;
